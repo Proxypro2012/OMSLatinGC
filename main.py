@@ -21,9 +21,9 @@ if selected_page == nav_pages[0]:
 
 
 if selected_page == nav_pages[1]:
-    st.subheader("Latin PMAQ")
-    st.write("Daily Phrase or Quote")
-    with r2col1:
+        st.subheader("Latin PMAQ")
+        st.write("Daily Phrase or Quote")
+    
         st.write("Notā bene — Note well")
         st.write("Et cetera (etc.) — And the rest")
         st.write("Et alia (et al.) — And the others")
