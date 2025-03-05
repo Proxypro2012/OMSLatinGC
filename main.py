@@ -24,14 +24,13 @@ selected_page = st.sidebar.radio("Navigation", nav_pages)
 if selected_page == nav_pages[0]:
     st.subheader("Welcome to the OMS Latin Website!")
     st.write("Nil sine magnō labore — Nothing without great labor (Brooklyn)")
-    r3col1, r3col2, r3col3 = st.columns([1, 2, 1])
     st.write("")
     st.write("")
     st.write("")
     st.write("")
-    with r3col2:
-        st.subheader("Ecce Romani")
-        card(title="Chapter 4", text="Ecce Romani")
+    
+    st.subheader("Ecce Romani")
+    card(title="Chapter 4", text="Ecce Romani")
 
 
 if selected_page == nav_pages[1]:
