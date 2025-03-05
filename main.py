@@ -1,5 +1,4 @@
 import streamlit as st
-import streamlit_extras
 import streamlit_extras.let_it_rain
 from streamlit_extras.card import card
 import streamlit_extras.theme
