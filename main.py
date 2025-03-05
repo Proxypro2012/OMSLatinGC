@@ -20,6 +20,8 @@ if selected_page == nav_pages[0]:
     st.write("Nil sine magnō labore — Nothing without great labor (Brooklyn)")
 
 
-if selected_page == "My Cart":
-    st.subheader("Your Cart")
-    st.write("Check out the items in your cart here.")
+if selected_page == nav_pages[1]:
+    st.subheader("Latin PMAQ")
+    st.write("Daily Phrase or Quote")
+    with r2col1:
+        st.write("")
