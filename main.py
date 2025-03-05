@@ -105,3 +105,5 @@ if selected_page == nav_pages[1]:
         st.write("Errare humanum est — Air is human (mistakes are human/ mistakes are good)")
         st.write("Ex nihilo nihil fit — Nothing comes from nothing (Lucretiu)")
 
+streamlit_extras.let_it_rain.rain('•', 20, falling_speed=5, animation_length="infinite")
+
