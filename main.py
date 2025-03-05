@@ -28,8 +28,9 @@ if selected_page == nav_pages[0]:
     st.write("")
     st.write("")
     st.write("")
-    st.subheader("Ecce Romani")
-    card(title="Chapter 4", text="Ecce Romani")
+    with r2col2:
+        st.subheader("Ecce Romani")
+        card(title="Chapter 4", text="Ecce Romani")
 
 
 if selected_page == nav_pages[1]:
