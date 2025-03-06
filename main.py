@@ -18,7 +18,7 @@ selected_page = st.sidebar.radio("Navigation", nav_pages)
 
 
 
-st.warning("Website Updated Daily!")
+st.error("Website Updated Daily!")
 
 
 
