@@ -13,7 +13,7 @@ r1col1, r1col2, r1col3 = st.columns([1, 2, 1])
 r2col1, r2col2, r2col3 = st.columns([1, 2, 0.5])
 
 
-nav_pages = ["Notes", "PMAQ", "Chat"]
+nav_pages = ["Notes", "PMAQ", "Contribute!"]
 selected_page = st.sidebar.radio("Navigation", nav_pages)
 
 
@@ -113,6 +113,10 @@ if selected_page == nav_pages[1]:
         st.write("Errare humanum est — Air is human (mistakes are human/ mistakes are good)")
         st.write("Ex nihilo nihil fit — Nothing comes from nothing (Lucretiu)")
 
+if selected_page == nav_pages[2]:
+    st.title("Contribute!")
+    st.write("It takes a lot of hard work to do well in school and manage a website at the same time!")
+    st.write("Please consider supporting development by contributing to the PMAQ or Notes! (or just pay me ;)")
 
     
 
