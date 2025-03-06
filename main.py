@@ -115,14 +115,30 @@ if selected_page == nav_pages[1]:
 
 if selected_page == nav_pages[2]:
     CHAT_FILE = "chat.json"
-
-    if not os.path.exists(CHAT_FILE):
+    
+    # Initialize chat file if it doesn't exist or is empty
+    if not os.path.exists(CHAT_FILE) or os.path.getsize(CHAT_FILE) == 0:
         with open(CHAT_FILE, "w") as f:
-            json.dump([], f)
+            json.dump([], f)  # Initialize as an empty list
     
-    with open(CHAT_FILE, "r") as f:
-        messages = json.load(f)
+    # Read messages from the chat file
+    def load_messages():
+        try:
+            with open(CHAT_FILE, "r") as f:
+                return json.load(f)
+        except json.JSONDecodeError:  # In case the file is corrupted
+            return []
     
+    # Write messages to the chat file
+    def save_message(message: str):
+        messages = load_messages()
+        messages.append(message)
+        with open(CHAT_FILE, "w") as f:
+            json.dump(messages, f)
+        
+        with open(CHAT_FILE, "r") as f:
+            messages = json.load(f)
+        
     st.title("💬 Streamlit Chatroom (Multi-User)")
     
     # Display messages
