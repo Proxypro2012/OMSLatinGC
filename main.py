@@ -114,42 +114,13 @@ if selected_page == nav_pages[1]:
         st.write("Ex nihilo nihil fit — Nothing comes from nothing (Lucretiu)")
 
 if selected_page == nav_pages[2]:
-    CHAT_FILE = "chat.json"
+    CHAT_FILE = "chat.txt"
+    
+    if not os.path.exists(CHAT_FILE):
+        with open(CHAT_FILE, 'w') as file:
+            pass  # Create an empty file if it doesn't exist
 
-# Ensure the chat file exists and is initialized
-    if not os.path.exists(CHAT_FILE) or os.path.getsize(CHAT_FILE) == 0:
-        with open(CHAT_FILE, "w") as f:
-            json.dump([], f)  # Initialize as an empty list
     
-    # Read messages from the chat file
-    def load_messages():
-        try:
-            with open(CHAT_FILE, "r") as f:
-                return json.load(f)
-        except json.JSONDecodeError:  # In case the file is corrupted
-            return []
-    
-    # Write messages to the chat file
-    def save_message(message: str):
-        messages = load_messages()  # Make sure 'messages' is defined here
-        messages.append(message)
-        with open(CHAT_FILE, "w") as f:
-            json.dump(messages, f)
-    
-    # Streamlit UI
-    st.title("💬 Streamlit Chatroom (Multi-User)")
-    
-    # Input for new messages
-    new_message = st.text_input("Enter your message:")
-    
-    if new_message:
-        save_message(new_message)
-        st.rerun()  # Reload the page after saving the new message
-    
-    # Display existing messages
-    messages = load_messages()
-    for msg in messages:
-        st.write(msg)
     
 
 
