@@ -33,6 +33,40 @@ if selected_page == nav_pages[0]:
     st.header("Ecce Romani")
     card(title="Chapter 4", text="Ecce Romani")
 
+    st.subheader("Chapter 4 Vocabulary:")
+
+    for i in range(5):
+        st.write("")
+
+
+        
+    st.write("molestus, -a, -um: bothersome, troublesome, annoying")
+    st.write("semper: always")
+    st.write("vexāre: to annoy, to bother [vexat, vexant]")
+    st.write("igitur: therefore")
+    st.write("amāre: to like, to love [amat, amant]")
+    st.write("dormīre: to sleep [dormit, dormiunt]")
+    st.write("cōnspicere: to catch sight of, notice, see [cōnspicit, cōnspiciunt]")
+    st.write("fūrtim: stealthily, sneakily")
+    st.write("appropinquāre: to approach [appropinquat, appropinquant]")
+    st.write("ascendere: to climb [ascendit, ascendunt]")
+    st.write("magnus, -a, -um: great, big")
+    st.write("magnā vōce: in a big (loud) voice")
+    st.write("audīre: to hear, to listen (to) [audit, audiunt]")
+    st.write("vidēre: to see [videt, vident]")
+    st.write("vōx / vōcem: voice")
+    st.write("terrēre: to scare, frighten [terret, terrent]")
+    st.write("sollicitus, -a, -um: anxious, worried")
+    st.write("tum: then")
+    st.write("“Dēscende, Sexte!”: Climb down, Sextus!")
+    st.write("tū: you (subject)")
+    st.write("nihil: nothing")
+    st.write("tē: you (direct object)")
+    st.write("“Cāvē!”: Be careful! Beware!")
+    st.write("rāmus: branch")
+    st.write("infirmus, -a, -um: weak, shaky")
+    st.write("fragor / fragōrem: loud noise, crash")
+
 
 if selected_page == nav_pages[1]:
         st.title("Latin PMAQ")
