@@ -11,7 +11,7 @@ r1col1, r1col2, r1col3 = st.columns([1, 2, 1])
 r2col1, r2col2, r2col3 = st.columns([1, 2, 0.5])
 
 
-nav_pages = ["Notes", "PMAQ"]
+nav_pages = ["Notes", "PMAQ", "Chat"]
 selected_page = st.sidebar.radio("Navigation", nav_pages)
 
 
@@ -110,6 +110,39 @@ if selected_page == nav_pages[1]:
         st.write("Semper fidelis — Always Faithful")
         st.write("Errare humanum est — Air is human (mistakes are human/ mistakes are good)")
         st.write("Ex nihilo nihil fit — Nothing comes from nothing (Lucretiu)")
+
+if selected_page == nav_pages[2]:
+    CHAT_FILE = "chat.json"
+
+    if not os.path.exists(CHAT_FILE):
+        with open(CHAT_FILE, "w") as f:
+            json.dump([], f)
+    
+    with open(CHAT_FILE, "r") as f:
+        messages = json.load(f)
+    
+    st.title("💬 Streamlit Chatroom (Multi-User)")
+    
+    # Display messages
+    for message in messages:
+        with st.chat_message(message["role"]):
+            st.write(f"**{message['user']}**: {message['text']}")
+    
+    # User input
+    user_input = st.chat_input("Type a message...")
+    username = st.text_input("Enter your name:", key="username")  # User ID
+    
+    if user_input and username:
+        new_message = {"role": "user", "user": username, "text": user_input}
+        messages.append(new_message)
+    
+        # Save chat history
+        with open(CHAT_FILE, "w") as f:
+            json.dump(messages, f)
+    
+        st.experimental_rerun()
+
+
 
 streamlit_extras.let_it_rain.rain('•', 20, falling_speed=5, animation_length="infinite")
 
