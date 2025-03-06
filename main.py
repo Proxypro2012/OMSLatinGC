@@ -18,7 +18,7 @@ selected_page = st.sidebar.radio("Navigation", nav_pages)
 
 
 
-st.info("Website Updated Daily!")
+st.toast("Website Updated Daily!")
 
 
 
