@@ -113,32 +113,7 @@ if selected_page == nav_pages[1]:
         st.write("Errare humanum est — Air is human (mistakes are human/ mistakes are good)")
         st.write("Ex nihilo nihil fit — Nothing comes from nothing (Lucretiu)")
 
-if selected_page == nav_pages[2]:
-    CHAT_FILE = "chat.txt"
-    
-    if not os.path.exists(CHAT_FILE):
-        with open(CHAT_FILE, 'w') as file:
-            pass  # Create an empty file if it doesn't exist
 
-    st.title("Latin Chatroom")
-    st.write("Note that this feature is still in beta")
-
-
-    try:
-        with open(CHAT_FILE, 'r') as file:
-            lines = file.readlines()  # Read all lines in the file
-            if len(CHAT_FILE) == 0:
-                st.info("No one has talked yet.")
-            # Display each line
-            for line in lines:
-                st.write(line.strip())
-            # strip() to remove any extra newline characters
-    except FileNotFoundError:
-        st.error("The file was not found!")
-    except Exception as e:
-        st.error(f"An error occurred: {e}")
-
-    
     
 
 
