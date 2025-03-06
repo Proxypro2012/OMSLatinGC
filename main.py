@@ -21,6 +21,7 @@ selected_page = st.sidebar.radio("Navigation", nav_pages)
 notificationMessage = random.choice(notification_txts)
 st.toast(notificationMessage)
 
+
 class Chapter4Vocabulary:
     def display_vocabulary(self):
         st.write("molestus, -a, -um: bothersome, troublesome, annoying")
@@ -50,42 +51,10 @@ class Chapter4Vocabulary:
         st.write("infirmus, -a, -um: weak, shaky")
         st.write("fragor / fragōrem: loud noise, crash")
 
-# Display content based on the selected page
-if selected_page == nav_pages[0]:
-    st.subheader("Welcome to the OMS Latin Website!")
-    st.write("Nil sine magnō labore — Nothing without great labor (Brooklyn)")
-
-    for i in range(10):
-        st.write("")
-    
-    st.header("Ecce Romani")
-    card(title="Chapter 4", text="Ecce Romani")
-
-    st.subheader("Chapter 4 Vocabulary:")
-
-    for i in range(5):
-        st.write("")  # Add some spacing
-
-    # Instantiate and display the Chapter 4 Vocabulary after the content
-    c4v = Chapter4Vocabulary()
-    c4v.display_vocabulary()
-    
 
 
-        
-    
-
-
-if selected_page == nav_pages[1]:
-        st.title("Latin PMAQ")
-        st.write("Daily Phrase or Quote")
-        st.write("")
-        st.write("")
-        st.write("")
-        st.write("")
-
-
-    
+class LatinPMAQ():
+    def display_pmaq(self):
         st.write("Notā bene — Note well")
         st.write("Et cetera (etc.) — And the rest")
         st.write("Et alia (et al.) — And the others")
@@ -155,6 +124,52 @@ if selected_page == nav_pages[1]:
         st.write("Errare humanum est — Air is human (mistakes are human/ mistakes are good)")
         st.write("Ex nihilo nihil fit — Nothing comes from nothing (Lucretiu)")
         st.write("Ex Librīs - From the Library")
+        
+    
+
+
+
+
+
+
+if selected_page == nav_pages[0]:
+    st.subheader("Welcome to the OMS Latin Website!")
+    st.write("Nil sine magnō labore — Nothing without great labor (Brooklyn)")
+
+    for i in range(10):
+        st.write("")
+    
+    st.header("Ecce Romani")
+    card(title="Chapter 4", text="Ecce Romani")
+
+    st.subheader("Chapter 4 Vocabulary:")
+
+    for i in range(5):
+        st.write("")  # Add some spacing
+
+    # Instantiate and display the Chapter 4 Vocabulary after the content
+    c4v = Chapter4Vocabulary()
+    c4v.display_vocabulary()
+    
+
+
+        
+    
+
+
+if selected_page == nav_pages[1]:
+        st.title("Latin PMAQ")
+        st.write("Daily Phrase or Quote")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        latinpmaq = LatinPMAQ()
+        latinpmaq.display_pmaq()
+
+
+    
+        
 
 if selected_page == nav_pages[2]:
     st.title("Contribute!")
