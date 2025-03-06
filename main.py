@@ -19,7 +19,7 @@ notification_txts = ["Website Updated Daily!", "Check out the PMAQ!", "Check out
 selected_page = st.sidebar.radio("Navigation", nav_pages)
 
 
-notifationMessage = random.choice(notification_txts)
+notificationMessage = random.choice(notification_txts)
 st.toast(notificationMessage)
 
 
