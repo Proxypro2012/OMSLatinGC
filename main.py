@@ -5,6 +5,7 @@ import streamlit_extras.theme
 import streamlit_shadcn_ui as ui
 import streamlit_antd_components as sac
 import os
+import random
 import json
 
 
@@ -14,11 +15,12 @@ r2col1, r2col2, r2col3 = st.columns([1, 2, 0.5])
 
 
 nav_pages = ["Notes", "PMAQ", "Contribute!"]
+notification_txts = ["Website Updated Daily!", "Check out the PMAQ!", "Check out the Notes section!", "Please consider contributing!"]
 selected_page = st.sidebar.radio("Navigation", nav_pages)
 
 
-
-st.toast("Website Updated Daily!")
+notifationMessage = random.choice(notification_txts)
+st.toast(notificationMessage)
 
 
 
