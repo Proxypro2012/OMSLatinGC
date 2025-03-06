@@ -129,6 +129,38 @@ class LatinPMAQ():
 
 
 
+class EdPuzzleNotes():
+    def display_edpuzzle_notes(self):
+        text = """
+        **Noun:**  
+        A person, place or thing  
+        Intangible concepts/ideas (virtue, courage)  
+        Essential for all sentences in English (at least as the subject)
+        
+        **Verb:**  
+        A necessity for all grammatically correct sentences  
+        Verbs are actions (caught) or states of being (exists)  
+        Don’t forget the common linking verb is (am, are)
+        
+        **Adjective:**  
+        A word “attached” to the noun  
+        Adjectives describe nouns  
+        Colors are adjectives and so are numbers
+        
+        **Adverb:**  
+        Words like soon and quickly  
+        Adverbs describe verbs (and other things)
+        
+        **Prepositional Phrase:**  
+        Short phrases like in the house  
+        Consist of a preposition (e.g, in, on, under, with) followed by a noun
+        """
+        
+        # Display the text in Streamlit using markdown
+        st.markdown(text)
+
+
+
 
 
 
@@ -150,7 +182,19 @@ if selected_page == nav_pages[0]:
     # Instantiate and display the Chapter 4 Vocabulary after the content
     c4v = Chapter4Vocabulary()
     c4v.display_vocabulary()
+
     
+    for i in range(10):
+        st.write("")
+    
+    st.header("EdPuzzleNotes")
+    for i in range(5):
+        st.write("")  # Add some spacing
+
+    edpn = EdPuzzleNotes()
+    edpn.display_edpuzzle_notes()
+
+
 
 
         
