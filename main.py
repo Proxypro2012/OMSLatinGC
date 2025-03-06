@@ -112,6 +112,7 @@ if selected_page == nav_pages[1]:
         st.write("Semper fidelis — Always Faithful")
         st.write("Errare humanum est — Air is human (mistakes are human/ mistakes are good)")
         st.write("Ex nihilo nihil fit — Nothing comes from nothing (Lucretiu)")
+        st.write("Ex Librīs - From the Library")
 
 if selected_page == nav_pages[2]:
     st.title("Contribute!")
