@@ -21,26 +21,7 @@ selected_page = st.sidebar.radio("Navigation", nav_pages)
 notificationMessage = random.choice(notification_txts)
 st.toast(notificationMessage)
 
-
-
-# Display content based on the selected page
-if selected_page == nav_pages[0]:
-    st.subheader("Welcome to the OMS Latin Website!")
-    st.write("Nil sine magnō labore — Nothing without great labor (Brooklyn)")
-
-    for i in range(10):
-        st.write("")
-    
-    st.header("Ecce Romani")
-    card(title="Chapter 4", text="Ecce Romani")
-
-    st.subheader("Chapter 4 Vocabulary:")
-
-    for i in range(5):
-        st.write("")
-
-
-        
+class Chapter4Vocabulary():
     st.write("molestus, -a, -um: bothersome, troublesome, annoying")
     st.write("semper: always")
     st.write("vexāre: to annoy, to bother [vexat, vexant]")
@@ -67,6 +48,31 @@ if selected_page == nav_pages[0]:
     st.write("rāmus: branch")
     st.write("infirmus, -a, -um: weak, shaky")
     st.write("fragor / fragōrem: loud noise, crash")
+    
+
+
+# Display content based on the selected page
+if selected_page == nav_pages[0]:
+    st.subheader("Welcome to the OMS Latin Website!")
+    st.write("Nil sine magnō labore — Nothing without great labor (Brooklyn)")
+
+    for i in range(10):
+        st.write("")
+    
+    st.header("Ecce Romani")
+    card(title="Chapter 4", text="Ecce Romani")
+
+    st.subheader("Chapter 4 Vocabulary:")
+
+    for i in range(5):
+        st.write("")
+
+    c4v = Chapter4Vocabulary()
+    
+
+
+        
+    
 
 
 if selected_page == nav_pages[1]:
