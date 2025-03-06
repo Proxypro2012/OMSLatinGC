@@ -115,8 +115,8 @@ if selected_page == nav_pages[1]:
 
 if selected_page == nav_pages[2]:
     CHAT_FILE = "chat.json"
-    
-    # Initialize chat file if it doesn't exist or is empty
+
+# Ensure the chat file exists and is initialized
     if not os.path.exists(CHAT_FILE) or os.path.getsize(CHAT_FILE) == 0:
         with open(CHAT_FILE, "w") as f:
             json.dump([], f)  # Initialize as an empty list
@@ -131,35 +131,26 @@ if selected_page == nav_pages[2]:
     
     # Write messages to the chat file
     def save_message(message: str):
-        messages = load_messages()
+        messages = load_messages()  # Make sure 'messages' is defined here
         messages.append(message)
         with open(CHAT_FILE, "w") as f:
             json.dump(messages, f)
-        
-        with open(CHAT_FILE, "r") as f:
-            messages = json.load(f)
-        
+    
+    # Streamlit UI
     st.title("💬 Streamlit Chatroom (Multi-User)")
     
-    # Display messages
-    for message in messages:
-        with st.chat_message(message["role"]):
-            st.write(f"**{message['user']}**: {message['text']}")
+    # Input for new messages
+    new_message = st.text_input("Enter your message:")
     
-    # User input
-    user_input = st.chat_input("Type a message...")
-    username = st.text_input("Enter your name:", key="username")  # User ID
+    if new_message:
+        save_message(new_message)
+        st.experimental_rerun()  # Reload the page after saving the new message
     
-    if user_input and username:
-        new_message = {"role": "user", "user": username, "text": user_input}
-        messages.append(new_message)
+    # Display existing messages
+    messages = load_messages()
+    for msg in messages:
+        st.write(msg)
     
-        # Save chat history
-        with open(CHAT_FILE, "w") as f:
-            json.dump(messages, f)
-    
-        st.experimental_rerun()
-
 
 
 streamlit_extras.let_it_rain.rain('•', 20, falling_speed=5, animation_length="infinite")
