@@ -144,7 +144,7 @@ if selected_page == nav_pages[2]:
     
     if new_message:
         save_message(new_message)
-        st.experimental_rerun()  # Reload the page after saving the new message
+        st.rerun()  # Reload the page after saving the new message
     
     # Display existing messages
     messages = load_messages()
