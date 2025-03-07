@@ -221,24 +221,7 @@ if selected_page == nav_pages[2]:
     st.write("Please consider supporting development by contributing to the PMAQ or Notes! (or just pay me ;)")
 
     
-def get_base64_image(file_path):
-    with open(file_path, "rb") as img_file:
-        return base64.b64encode(img_file.read()).decode()
 
-# Convert local cursor image to base64
-cursor_base64 = get_base64_image("cursor.png")  # Change to your file
-
-# Custom CSS with embedded Base64 image
-custom_css = f"""
-    <style>
-        body, div, button, input, textarea {{
-            cursor: url('data:image/png;base64,{cursor_base64}'), auto;
-        }}
-    </style>
-"""
-
-# Apply the custom cursor
-st.markdown(custom_css, unsafe_allow_html=True)
 
 streamlit_extras.let_it_rain.rain('•', 20, falling_speed=5, animation_length="infinite")
 
