@@ -186,7 +186,7 @@ if selected_page == nav_pages[0]:
     
     for i in range(10):
         st.write("")
-    
+    st.image("edpuzzle-logo.png")
     st.header("EdPuzzleNotes")
     for i in range(5):
         st.write("")  # Add some spacing
