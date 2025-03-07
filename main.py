@@ -121,7 +121,7 @@ class LatinPMAQ():
         st.write("Vox populī — The Voice Of The People")
         st.write("Semper paratus — Always Prepared")
         st.write("Semper fidelis — Always Faithful")
-        st.write("Errare humanum est — Air is human (mistakes are human/ mistakes are good)")
+        st.write("Errare humanum est — Error is human (mistakes are human/ mistakes are good)")
         st.write("Ex nihilo nihil fit — Nothing comes from nothing (Lucretiu)")
         st.write("Ex Librīs - From the Library")
         
