@@ -167,6 +167,7 @@ class EdPuzzleNotes():
 if selected_page == nav_pages[0]:
     st.subheader("Welcome to the OMS Latin Website!")
     st.write("Nil sine magnō labore — Nothing without great labor (Brooklyn)")
+    st.write("Developed and Managed by Kabir Tiwari")
 
     for i in range(10):
         st.write("")
